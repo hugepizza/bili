@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/hugepizza/bilibili/pkgs"
+	"github.com/hugepizza/bili/pkgs"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
