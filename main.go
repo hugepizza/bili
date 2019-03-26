@@ -33,6 +33,15 @@ func main() {
 }
 
 func run(cmd *cobra.Command, args []string) {
+	if merge {
+		err := pkgs.Check()
+		if err != nil {
+			logrus.Fatal(err)
+		}
+	}
+	if avNumber == 0 {
+		logrus.Fatal("无效av号")
+	}
 	cli := &http.Client{}
 	title, urls, err := pkgs.Resolve(cli, fmt.Sprintf("https://www.bilibili.com/video/av%d", avNumber))
 	if err != nil {
